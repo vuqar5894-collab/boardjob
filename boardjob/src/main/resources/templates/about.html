@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>İş Lövhəsi &mdash; Haqqımızda</title>
+</head>
+
+<body>
+
+    <div layout:fragment="content">
+        <!-- HOME -->
+        <section class="section-hero overlay inner-page bg-image"
+            th:style="'background-image: url(' + @{/images/hero_1.jpg} + ');'" id="home-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1 class="text-white font-weight-bold">Haqqımızda</h1>
+                        <div class="custom-breadcrumbs">
+                            <a href="#">Ana Səhifə</a> <span class="mx-2 slash">/</span>
+                            <span class="text-white"><strong>Haqqımızda</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-image overlay-primary fixed overlay" id="next-section"
+            th:style="'background-image: url(' + @{/images/hero_1.jpg} + ');'">
+            <div class="container">
+                <div class="row mb-5 justify-content-center">
+                    <div class="col-md-7 text-center">
+                        <h2 class="section-title mb-2 text-white">Sayt Statistikası</h2>
+                        <p class="lead text-white">Platformamızda minlərlə namizəd və iş elanı mövcuddur. Ən uyğun işi
+                            tapın.</p>
+                    </div>
+                </div>
+                <div class="row pb-0 block__19738 section-counter">
+
+                    <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
+                        <div class="d-flex align-items-center justify-content-center mb-2">
+                            <strong class="number" data-number="1930">0</strong>
+                        </div>
+                        <span class="caption">Namizədlər</span>
+                    </div>
+
+                    <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
+                        <div class="d-flex align-items-center justify-content-center mb-2">
+                            <strong class="number" data-number="54">0</strong>
+                        </div>
+                        <span class="caption">Yerleşdirilmiş İşlər</span>
+                    </div>
+
+                    <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
+                        <div class="d-flex align-items-center justify-content-center mb-2">
+                            <strong class="number" data-number="120">0</strong>
+                        </div>
+                        <span class="caption">Doldurulmuş İşlər</span>
+                    </div>
+
+                    <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
+                        <div class="d-flex align-items-center justify-content-center mb-2">
+                            <strong class="number" data-number="550">0</strong>
+                        </div>
+                        <span class="caption">Şirkətlər</span>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="site-section pb-0">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <a data-fancybox data-ratio="2" href="https://vimeo.com/317571768" class="block__96788">
+                            <span class="play-icon"><span class="icon-play"></span></span>
+                            <img th:src="@{/images/sq_img_6.jpg}" alt="Image" class="img-fluid img-shadow">
+                        </a>
+                    </div>
+                    <div class="col-lg-5 ml-auto">
+                        <h2 class="section-title mb-3">Freelancer və Veb Proqramlaşdırıcılar üçün İş Lövhəsi</h2>
+                        <p class="lead">Platformamız freelancer və veb proqramlaşdırıcılar üçün ideal iş imkanları
+                            təqdim edir. Sizə uyğun layihələri tapın və karyeranızı inkişaf etdirin.</p>
+                        <p>Minlərlə şirkət və işəgötürənlər platformamızda aktiv olaraq iş elanları yerleşdirir. Siz də
+                            bu imkandan yararlanaraq öz bacarlarınıza uyğun işləri tapa bilərsiniz.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="site-section pt-0">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0 order-md-2">
+                        <a data-fancybox data-ratio="2" href="https://vimeo.com/317571768" class="block__96788">
+                            <span class="play-icon"><span class="icon-play"></span></span>
+                            <img th:src="@{/images/sq_img_8.jpg}" alt="Image" class="img-fluid img-shadow">
+                        </a>
+                    </div>
+                    <div class="col-lg-5 mr-auto order-md-1  mb-5 mb-lg-0">
+                        <h2 class="section-title mb-3">İşçilər üçün İş Lövhəsi</h2>
+                        <p class="lead">İş axtarışınızı asanlaşdırın. Platformamızda müxtəlif sahələrdə minlərlə iş
+                            elanı mövcuddur. Xəyal işinizi tapın!</p>
+                        <p>Sadəcə bir neçə kliklə sizə uyğun işlərə müraciət edin. Profilinizi yaradın, CV-nizi yükləyin
+                            və işə başlayın!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="site-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-12 text-center" data-aos="fade">
+                        <h2 class="section-title mb-3">Komandamız</h2>
+                    </div>
+                </div>
+
+                <div class="row align-items-center block__69944">
+
+                    <div class="col-md-6">
+                        <img th:src="@{/images/person_6.jpg}" alt="Image" class="img-fluid mb-4 rounded">
+                    </div>
+
+                    <div class="col-md-6">
+                        <h3>Elisabeth Smith</h3>
+                        <p class="text-muted">Kreativ Direktor</p>
+                        <p>Platformamızın kreativ direktoru olaraq, istifadəçi təcrubəsini və dizaynı mükəmməlləşdirmək
+                            üçün çalışıram. Komandamızla birlikdə ən yaxşı iş axtarış təcrubəsini yaradırıq.</p>
+                        <div class="social mt-4">
+                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><span
+                                    class="icon-facebook"></span></a>
+                            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><span
+                                    class="icon-twitter"></span></a>
+                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><span
+                                    class="icon-instagram"></span></a>
+                            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><span
+                                    class="icon-linkedin"></span></a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 order-md-2 ml-md-auto">
+                        <img th:src="@{/images/person_5.jpg}" alt="Image" class="img-fluid mb-4 rounded">
+                    </div>
+
+                    <div class="col-md-6">
+                        <h3>Chintan Patel</h3>
+                        <p class="text-muted">Kreativ Direktor</p>
+                        <p>Soluta quasi cum delectus eum facilis recusandae nesciunt molestias accusantium libero
+                            dolores repellat id in dolorem laborum ad modi qui at quas dolorum voluptatem voluptatum
+                            repudiandae voluptatibus ut? Ex vel ad explicabo iure ipsa possimus consectetur neque rem
+                            molestiae eligendi velit?.</p>
+                        <div class="social mt-4">
+                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><span
+                                    class="icon-facebook"></span></a>
+                            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><span
+                                    class="icon-twitter"></span></a>
+                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><span
+                                    class="icon-instagram"></span></a>
+                            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><span
+                                    class="icon-linkedin"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

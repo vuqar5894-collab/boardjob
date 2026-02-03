@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>JobBoard &mdash; İşəgötürən Profili</title>
+</head>
+
+<body>
+
+    <div layout:fragment="content">
+        <section class="section-hero overlay inner-page bg-image"
+            th:style="'background-image: url(' + @{/images/hero_1.jpg} + ');'" id="home-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1 class="text-white font-weight-bold">İşəgötürən Paneli</h1>
+                        <div class="custom-breadcrumbs">
+                            <a href="#">Ana Səhifə</a> <span class="mx-2 slash">/</span>
+                            <span class="text-white"><strong>Profil</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="site-section">
+            <div class="container">
+                <!-- Statistics Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Yerləşdirilmiş İşlər</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"
+                                            th:text="${totalJobsPosted}">0</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-briefcase fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            Alınan Müraciətlər</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"
+                                            th:text="${totalApplications}">0</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-users fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <!-- Profile Information Card -->
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3 bg-primary">
+                                <h6 class="m-0 font-weight-bold text-white">
+                                    <i class="icon-person mr-2"></i>Profil Məlumatları
+                                </h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-md-4">
+                                        <strong>Ad:</strong>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <span th:text="${user.name}">Company Name</span>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row mb-3">
+                                    <div class="col-md-4">
+                                        <strong>Email:</strong>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <span th:text="${user.email}">employer@example.com</span>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row mb-3">
+                                    <div class="col-md-4">
+                                        <strong>Rol:</strong>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <span class="badge badge-info" th:text="${user.role}">EMPLOYER</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <!-- Quick Actions Card -->
+                        <div class="card shadow">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">
+                                    <i class="icon-briefcase mr-2"></i>Sürətli Əməliyyatlar
+                                </h6>
+                            </div>
+                            <div class="card-body">
+                                <a th:href="@{/employer/jobs}" class="btn btn-primary btn-block mb-2">
+                                    <i class="icon-briefcase mr-2"></i>Mənim İşlərim
+                                </a>
+                                <a th:href="@{/jobs/post}" class="btn btn-success btn-block mb-2">
+                                    <i class="icon-add mr-2"></i>Yeni İş Elan Et
+                                </a>
+                                <a th:href="@{/jobs}" class="btn btn-outline-primary btn-block">
+                                    <i class="icon-search mr-2"></i>Bütün İşlərə Bax
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

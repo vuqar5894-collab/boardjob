@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>İş Lövhəsi &mdash; Admin Paneli</title>
+</head>
+
+<body>
+
+    <div layout:fragment="content">
+        <section class="section-hero overlay inner-page bg-image"
+            th:style="'background-image: url(' + @{/images/hero_1.jpg} + ');'" id="home-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1 class="text-white font-weight-bold">Admin Paneli</h1>
+                        <div class="custom-breadcrumbs">
+                            <a th:href="@{/}">Ana Səhifə</a> <span class="mx-2 slash">/</span>
+                            <span class="text-white"><strong>Admin Paneli</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="site-section">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h2 class="mb-4">Platforma Statistikası</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Əmumi İstifadəçilər</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" th:text="${totalUsers}">0
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-users fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            Əmumi İşlər</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" th:text="${totalJobs}">0
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-briefcase fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card border-left-info shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                            Əmumi Müraciətlər</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"
+                                            th:text="${totalApplications}">0</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-file-text fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card shadow">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">
+                                    <i class="icon-settings mr-2"></i>Admin Əməliyyatları
+                                </h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-3 mb-2">
+                                        <a th:href="@{/admin/users}" class="btn btn-primary btn-block">
+                                            <i class="icon-person mr-2"></i>İstifadəçiləri İdarə Et
+                                        </a>
+                                    </div>
+                                    <div class="col-md-3 mb-2">
+                                        <a th:href="@{/admin/jobs}" class="btn btn-success btn-block">
+                                            <i class="icon-briefcase mr-2"></i>İşləri İdarə Et
+                                        </a>
+                                    </div>
+                                    <div class="col-md-3 mb-2">
+                                        <a th:href="@{/admin/applications}" class="btn btn-info btn-block">
+                                            <i class="icon-file-text mr-2"></i>Müraciətlərə Bax
+                                        </a>
+                                    </div>
+                                    <div class="col-md-3 mb-2">
+                                        <a th:href="@{/admin/messages}" class="btn btn-warning btn-block">
+                                            <i class="icon-envelope mr-2"></i>Mesajlara Bax
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-12">
+                                        <a th:href="@{/}" class="btn btn-outline-primary btn-block">
+                                            <i class="icon-home mr-2"></i>Ana Səhifəyə Qayıt
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

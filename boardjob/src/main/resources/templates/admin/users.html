@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>JobBoard &mdash; Manage Users</title>
+</head>
+
+<body>
+
+    <div layout:fragment="content">
+        <section class="section-hero overlay inner-page bg-image"
+            th:style="'background-image: url(' + @{/images/hero_1.jpg} + ');'" id="home-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1 class="text-white font-weight-bold">Manage Users</h1>
+                        <div class="custom-breadcrumbs">
+                            <a th:href="@{/}">Home</a> <span class="mx-2 slash">/</span>
+                            <a th:href="@{/admin}">Admin</a> <span class="mx-2 slash">/</span>
+                            <span class="text-white"><strong>Users</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="site-section">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <a th:href="@{/admin}" class="btn btn-outline-primary">
+                            <i class="icon-arrow-left mr-2"></i>Back to Dashboard
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card shadow">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">All Users</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Role</th>
+                                                <th>Əməliyyatlar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="user : ${users}">
+                                                <td th:text="${user.name}">User Name</td>
+                                                <td th:text="${user.email}">user@example.com</td>
+                                                <td>
+                                                    <span class="badge badge-primary"
+                                                        th:if="${user.role.name() == 'ADMIN'}">ADMİN</span>
+                                                    <span class="badge badge-success"
+                                                        th:if="${user.role.name() == 'EMPLOYER'}">İŞƏGÖTÜRƏN</span>
+                                                    <span class="badge badge-info"
+                                                        th:if="${user.role.name() == 'CANDIDATE'}">NAMİZƏD</span>
+                                                </td>
+                                                <td>
+                                                    <div class="btn-group" role="group">
+                                                        <!-- Edit User Button -->
+                                                        <a th:href="@{/admin/users/edit/{id}(id=${user.id})}"
+                                                            class="btn btn-sm btn-primary" title="Redaktə et">
+                                                            <i class="icon-pencil"></i>
+                                                        </a>
+
+                                                        <!-- Delete User Button -->
+                                                        <form th:action="@{/admin/users/delete/{id}(id=${user.id})}"
+                                                            method="post" style="display: inline;"
+                                                            onsubmit="return confirm('Bu istifadəçini silmək istədiyinizdən əminsiniz?');">
+                                                            <button type="submit" class="btn btn-sm btn-danger"
+                                                                title="Sil"
+                                                                th:disabled="${user.role.name() == 'ADMIN'}">
+                                                                <i class="icon-trash"></i>
+                                                            </button>
+                                                        </form>
+
+                                                        <!-- Change Role Dropdown -->
+                                                        <div class="btn-group" role="group">
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-secondary dropdown-toggle"
+                                                                data-toggle="dropdown" aria-haspopup="true"
+                                                                aria-expanded="false" title="Rolu dəyiş"
+                                                                th:disabled="${user.role.name() == 'ADMIN'}">
+                                                                <i class="icon-cog"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu">
+                                                                <form
+                                                                    th:action="@{/admin/users/change-role/{id}(id=${user.id})}"
+                                                                    method="post">
+                                                                    <input type="hidden" name="role" value="CANDIDATE">
+                                                                    <button type="submit" class="dropdown-item"
+                                                                        th:disabled="${user.role.name() == 'CANDIDATE'}">
+                                                                        Namizəd et
+                                                                    </button>
+                                                                </form>
+                                                                <form
+                                                                    th:action="@{/admin/users/change-role/{id}(id=${user.id})}"
+                                                                    method="post">
+                                                                    <input type="hidden" name="role" value="EMPLOYER">
+                                                                    <button type="submit" class="dropdown-item"
+                                                                        th:disabled="${user.role.name() == 'EMPLOYER'}">
+                                                                        İşəgötürən et
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

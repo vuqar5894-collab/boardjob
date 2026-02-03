@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>JobBoard &mdash; Applications</title>
+</head>
+
+<body>
+
+    <div layout:fragment="content">
+        <section class="section-hero overlay inner-page bg-image"
+            th:style="'background-image: url(' + @{/images/hero_1.jpg} + ');'" id="home-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1 class="text-white font-weight-bold">Applications for <span th:text="${job.title}">Job
+                                Title</span></h1>
+                        <div class="custom-breadcrumbs">
+                            <a href="#">Home</a> <span class="mx-2 slash">/</span>
+                            <a th:href="@{/employer/jobs}">My Jobs</a> <span class="mx-2 slash">/</span>
+                            <span class="text-white"><strong>Applications</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="site-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-md-12">
+                        <div th:if="${applications.empty}" class="alert alert-info">
+                            No applications received for this job yet.
+                        </div>
+                        <div th:unless="${applications.empty}" class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Candidate Name</th>
+                                        <th>Email</th>
+                                        <th>Applied On</th>
+                                        <th>Cover Letter</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="app : ${applications}">
+                                        <td th:text="${app.candidate != null ? app.candidate.name : 'N/A'}">Name</td>
+                                        <td th:text="${app.candidate != null ? app.candidate.email : 'N/A'}">Email</td>
+                                        <td th:text="${#temporals.format(app.appliedAt, 'yyyy-MM-dd HH:mm')}">Date</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-outline-primary"
+                                                data-toggle="modal" th:data-target="'#coverLetterModal' + ${app.id}">
+                                                View Cover Letter
+                                            </button>
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" th:id="'coverLetterModal' + ${app.id}" tabindex="-1"
+                                                role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">Cover Letter from <span
+                                                                    th:text="${app.candidate != null ? app.candidate.name : 'N/A'}">Candidate</span>
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p th:text="${app.coverLetter}">Cover letter content...</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

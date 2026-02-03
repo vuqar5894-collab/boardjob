@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>İş Lövhəsi &mdash; İş Detalları</title>
+</head>
+
+<body>
+
+    <div layout:fragment="content">
+        <section class="section-hero overlay inner-page bg-image"
+            th:style="'background-image: url(' + @{/images/hero_1.jpg} + ');'" id="home-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1 class="text-white font-weight-bold">İş Detalları</h1>
+                        <div class="custom-breadcrumbs">
+                            <a th:href="@{/}">Ana Səhifə</a> <span class="mx-2 slash">/</span>
+                            <a th:href="@{/jobs}">İşlər</a> <span class="mx-2 slash">/</span>
+                            <span class="text-white"><strong th:text="${job.title}">Job Title</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="site-section">
+            <div class="container">
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-8 mb-4 mb-lg-0">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <h2 th:text="${job.title}">Job Title</h2>
+                                <div>
+                                    <span class="ml-0 mr-2 mb-2"><span class="icon-briefcase mr-2"></span><span
+                                            th:text="${job.employer.name}">Company Name</span></span>
+                                    <span class="m-2"><span class="icon-room mr-2"></span><span
+                                            th:text="${job.location}">Location</span></span>
+                                    <span class="m-2"><span class="icon-clock-o mr-2"></span><span
+                                            th:text="${job.jobType != null ? job.jobType : ''}">Job Type</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="row">
+                            <div class="col-6">
+                                <form th:if="${canApply}" th:action="@{/jobs/{id}/apply(id=${job.id})}" method="post">
+                                    <button type="submit" class="btn btn-block btn-primary btn-md">Müraciət Et</button>
+                                </form>
+                                <button th:if="${alreadyApplied}" class="btn btn-block btn-secondary btn-md"
+                                    disabled>Artıq Müraciət Edilib</button>
+                                <a th:if="${!canApply and !alreadyApplied}" th:href="@{/login}"
+                                    class="btn btn-block btn-primary btn-md">Müraciət üçün Daxil Ol</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="mb-5">
+                            <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span
+                                    class="icon-align-left mr-3"></span>İş Təsviri</h3>
+                            <p th:text="${job.description}">Job description goes here.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="bg-light p-3 border rounded mb-4">
+                            <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">İş Xülasəsi</h3>
+                            <ul class="list-unstyled pl-3 mb-0">
+                                <li class="mb-2"><strong class="text-black">Yayımlanma tarixi:</strong> <span
+                                        th:text="${#temporals.format(job.createdAt, 'dd MMM yyyy')}">Date</span></li>
+                                <li class="mb-2"><strong class="text-black">İş Statusu:</strong> <span
+                                        th:text="${job.jobType != null ? job.jobType : ''}">Job Type</span></li>
+                                <li class="mb-2"><strong class="text-black">Maaş:</strong> <span
+                                        th:text="${job.salary}">$50,000</span></li>
+                                <li class="mb-2"><strong class="text-black">Yer:</strong> <span
+                                        th:text="${job.location}">Location</span></li>
+                                <li class="mb-2"><strong class="text-black">Kateqoriya:</strong> <span
+                                        th:text="${job.category != null ? job.category.name : 'N/A'}">Category</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-light p-3 border rounded">
+                            <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Paylaş</h3>
+                            <div class="px-3">
+                                <a href="https://www.facebook.com/sharer/sharer.php" target="_blank"
+                                    rel="noopener noreferrer" class="pt-3 pb-3 pr-3 pl-0"><span
+                                        class="icon-facebook"></span></a>
+                                <a href="https://twitter.com/intent/tweet" target="_blank" rel="noopener noreferrer"
+                                    class="pt-3 pb-3 pr-3 pl-0"><span class="icon-twitter"></span></a>
+                                <a href="https://www.linkedin.com/sharing/share-offsite/" target="_blank"
+                                    rel="noopener noreferrer" class="pt-3 pb-3 pr-3 pl-0"><span
+                                        class="icon-linkedin"></span></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

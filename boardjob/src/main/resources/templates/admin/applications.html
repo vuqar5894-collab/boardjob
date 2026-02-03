@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>İş Lövhəsi &mdash; Müraciətlərə Bax</title>
+</head>
+
+<body>
+
+    <div layout:fragment="content">
+        <section class="section-hero overlay inner-page bg-image"
+            th:style="'background-image: url(' + @{/images/hero_1.jpg} + ');'" id="home-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1 class="text-white font-weight-bold">Müraciətlərə Bax</h1>
+                        <div class="custom-breadcrumbs">
+                            <a th:href="@{/}">Ana Səhifə</a> <span class="mx-2 slash">/</span>
+                            <a th:href="@{/admin}">Admin</a> <span class="mx-2 slash">/</span>
+                            <span class="text-white"><strong>Müraciətlər</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="site-section">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <a th:href="@{/admin}" class="btn btn-outline-primary">
+                            <i class="icon-arrow-left mr-2"></i>Panelə Qayıt
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card shadow">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Bütün Müraciətlər</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Namizəd</th>
+                                                <th>İş</th>
+                                                <th>Müraciət Tarixi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="app : ${applications}">
+                                                <td th:text="${app.candidate != null ? app.candidate.name : 'N/A'}">
+                                                    Candidate Name</td>
+                                                <td th:text="${app.job != null ? app.job.title : 'N/A'}">Job Title</td>
+                                                <td th:text="${#temporals.format(app.appliedAt, 'dd MMM yyyy HH:mm')}">
+                                                    Applied Date</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

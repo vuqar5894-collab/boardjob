@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>İş Lövhəsi &mdash; Qeydiyyat</title>
+</head>
+
+<body>
+
+    <div layout:fragment="content">
+        <section class="section-hero overlay inner-page bg-image"
+            th:style="'background-image: url(' + @{/images/hero_1.jpg} + ');'" id="home-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1 class="text-white font-weight-bold">Qeydiyyat</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="site-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <form th:action="@{/register}" th:object="${user}" method="post"
+                            class="p-4 p-md-5 border rounded">
+                            <h3 class="text-black mb-5 border-bottom pb-2">Qeydiyyat</h3>
+
+                            <div class="form-group">
+                                <label for="name">Ad</label>
+                                <input type="text" class="form-control" id="name" th:field="*{name}" placeholder="Ad"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" th:field="*{email}"
+                                    placeholder="Email ünvanı" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Şifrə</label>
+                                <input type="password" class="form-control" id="password" th:field="*{password}"
+                                    placeholder="Şifrə" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="role">Rol</label>
+                                <select class="form-control" id="role" th:field="*{role}">
+                                    <option th:each="r : ${T(az.vugar.boardjob.entity.Role).values()}" th:value="${r}"
+                                        th:text="${r.name() == 'ADMIN' ? 'ADMİN' : (r.name() == 'EMPLOYER' ? 'İŞƏGÖTÜRƏN' : 'NAMİZƏD')}">
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="row align-items-center">
+                                <div class="col-6">
+                                    <button type="submit"
+                                        class="btn btn-primary btn-block text-white btn-md">Qeydiyyatdan Keç</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>İş Lövhəsi &mdash; Ana Səhifə</title>
+</head>
+
+<body>
+
+    <div layout:fragment="content">
+        <!-- HOME -->
+        <section class="home-section section-hero overlay bg-image"
+            th:style="'background-image: url(' + @{/images/hero_1.jpg} + ');'" id="home-section">
+
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-12">
+                        <div class="mb-5 text-center">
+                            <h1 class="text-white font-weight-bold">Xəyalınızdakı İşi Tapmağın Ən Asan Yolu</h1>
+                            <p>Minlərlə iş elanı arasından sizə uyğun olanı tapın və karyeranızı inkişaf etdirin.</p>
+                        </div>
+                        <form action="/jobs" method="get" class="search-jobs-form">
+                            <div class="row mb-5">
+                                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                                    <input type="text" name="keyword" class="form-control form-control-lg"
+                                        placeholder="İş adı, Şirkət...">
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                                    <select name="location" class="selectpicker" data-style="btn-white btn-lg"
+                                        data-width="100%" data-live-search="true" title="Region Seçin">
+                                        <option value="">Hər yerdə</option>
+                                        <option value="Bakı">Bakı</option>
+                                        <option value="Gəncə">Gəncə</option>
+                                        <option value="Sumqayıt">Sumqayıt</option>
+                                        <option value="Mingəçevir">Mingəçevir</option>
+                                        <option value="Şəki">Şəki</option>
+                                        <option value="Lənkəran">Lənkəran</option>
+                                        <option value="Naxçıvan">Naxçıvan</option>
+                                        <option value="Şirvan">Şirvan</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                                    <select name="jobType" class="selectpicker" data-style="btn-white btn-lg"
+                                        data-width="100%" data-live-search="true" title="İş Növü Seçin">
+                                        <option value="">Hamısı</option>
+                                        <option value="PART_TIME">Part-time</option>
+                                        <option value="FULL_TIME">Full-time</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                                    <button type="submit"
+                                        class="btn btn-primary btn-lg btn-block text-white btn-search"><span
+                                            class="icon-search icon mr-2"></span>İş Axtar</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 popular-keywords">
+                                    <h3>Populyar Açar Sözlər:</h3>
+                                    <ul class="keywords list-unstyled m-0 p-0">
+                                        <li><a href="#" class="">UI Designer</a></li>
+                                        <li><a href="#" class="">Python</a></li>
+                                        <li><a href="#" class="">Developer</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#next" class="scroll-button smoothscroll">
+                <span class=" icon-keyboard_arrow_down"></span>
+            </a>
+
+        </section>
+
+        <section class="py-5 bg-image overlay-primary fixed overlay" id="next"
+            th:style="'background-image: url(' + @{/images/hero_1.jpg} + ');'">
+            <div class="container">
+                <div class="row mb-5 justify-content-center">
+                    <div class="col-md-7 text-center">
+                        <h2 class="section-title mb-2 text-white">Sayt Statistikası</h2>
+                        <p class="lead text-white">Platformamızda minlərlə namizəd və iş elanı mövcuddur. Ən uyğun işi
+                            tapın.</p>
+                    </div>
+                </div>
+                <div class="row pb-0 block__19738 section-counter">
+
+                    <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
+                        <div class="d-flex align-items-center justify-content-center mb-2">
+                            <strong class="number" data-number="1930">0</strong>
+                        </div>
+                        <span class="caption">Namizədlər</span>
+                    </div>
+
+                    <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
+                        <div class="d-flex align-items-center justify-content-center mb-2">
+                            <strong class="number" data-number="54">0</strong>
+                        </div>
+                        <span class="caption">Yerleşdirilmiş İşlər</span>
+                    </div>
+
+                    <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
+                        <div class="d-flex align-items-center justify-content-center mb-2">
+                            <strong class="number" data-number="120">0</strong>
+                        </div>
+                        <span class="caption">Doldurulmuş İşlər</span>
+                    </div>
+
+                    <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
+                        <div class="d-flex align-items-center justify-content-center mb-2">
+                            <strong class="number" data-number="550">0</strong>
+                        </div>
+                        <span class="caption">Şirkətlər</span>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="site-section">
+            <div class="container">
+
+                <div class="row mb-5 justify-content-center">
+                    <div class="col-md-7 text-center">
+                        <h2 class="section-title mb-2">İş Elanları</h2>
+                    </div>
+                </div>
+
+                <ul class="job-listings mb-5">
+                    <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+                        <a th:href="@{/job-single}"></a>
+                        <div class="job-listing-logo">
+                            <img th:src="@{/images/job_logo_1.jpg}" alt="Free Website Template by Free-Template.co"
+                                class="img-fluid">
+                        </div>
+
+                        <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+                            <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+                                <h2>Product Designer</h2>
+                                <strong>Adidas</strong>
+                            </div>
+                            <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
+                                <span class="icon-room"></span> New York, New York
+                            </div>
+                            <div class="job-listing-meta">
+                                <span class="badge badge-danger">Yarımştat</span>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+                        <a th:href="@{/job-single}"></a>
+                        <div class="job-listing-logo">
+                            <img th:src="@{/images/job_logo_2.jpg}" alt="Free Website Template by Free-Template.co"
+                                class="img-fluid">
+                        </div>
+
+                        <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+                            <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+                                <h2>Digital Marketing Director</h2>
+                                <strong>Sprint</strong>
+                            </div>
+                            <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
+                                <span class="icon-room"></span> Overland Park, Kansas
+                            </div>
+                            <div class="job-listing-meta">
+                                <span class="badge badge-success">Tam ştat</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+                        <a th:href="@{/job-single}"></a>
+                        <div class="job-listing-logo">
+                            <img th:src="@{/images/job_logo_3.jpg}" alt="Free Website Template by Free-Template.co"
+                                class="img-fluid">
+                        </div>
+
+                        <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+                            <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+                                <h2>Back-end Engineer (Python)</h2>
+                                <strong>Amazon</strong>
+                            </div>
+                            <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
+                                <span class="icon-room"></span> Overland Park, Kansas
+                            </div>
+                            <div class="job-listing-meta">
+                                <span class="badge badge-success">Full Time</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+                        <a th:href="@{/job-single}"></a>
+                        <div class="job-listing-logo">
+                            <img th:src="@{/images/job_logo_4.jpg}" alt="Free Website Template by Free-Template.co"
+                                class="img-fluid">
+                        </div>
+
+                        <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+                            <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+                                <h2>Senior Art Director</h2>
+                                <strong>Microsoft</strong>
+                            </div>
+                            <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
+                                <span class="icon-room"></span> Anywhere
+                            </div>
+                            <div class="job-listing-meta">
+                                <span class="badge badge-success">Full Time</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+                        <a th:href="@{/job-single}"></a>
+                        <div class="job-listing-logo">
+                            <img th:src="@{/images/job_logo_5.jpg}" alt="Free Website Template by Free-Template.co"
+                                class="img-fluid">
+                        </div>
+
+                        <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+                            <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+                                <h2>Product Designer</h2>
+                                <strong>Puma</strong>
+                            </div>
+                            <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
+                                <span class="icon-room"></span> San Mateo, CA
+                            </div>
+                            <div class="job-listing-meta">
+                                <span class="badge badge-success">Full Time</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+                        <a th:href="@{/job-single}"></a>
+                        <div class="job-listing-logo">
+                            <img th:src="@{/images/job_logo_1.jpg}" alt="Free Website Template by Free-Template.co"
+                                class="img-fluid">
+                        </div>
+
+                        <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+                            <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+                                <h2>Product Designer</h2>
+                                <strong>Adidas</strong>
+                            </div>
+                            <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
+                                <span class="icon-room"></span> New York, New York
+                            </div>
+                            <div class="job-listing-meta">
+                                <span class="badge badge-danger">Part Time</span>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+                        <a th:href="@{/job-single}"></a>
+                        <div class="job-listing-logo">
+                            <img th:src="@{/images/job_logo_2.jpg}" alt="Free Website Template by Free-Template.co"
+                                class="img-fluid">
+                        </div>
+
+                        <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+                            <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+                                <h2>Digital Marketing Director</h2>
+                                <strong>Sprint</strong>
+                            </div>
+                            <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
+                                <span class="icon-room"></span> Overland Park, Kansas
+                            </div>
+                            <div class="job-listing-meta">
+                                <span class="badge badge-success">Full Time</span>
+                            </div>
+                        </div>
+                    </li>
+
+
+
+
+                </ul>
+
+                <div class="row pagination-wrap">
+                    <div class="col-md-6 text-center text-md-left mb-4 mb-md-0">
+                        <span>1-7 arası göstərilir, Cəmi 43,167 İş</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-right">
+                        <div class="custom-pagination ml-auto">
+                            <a href="#" class="prev">Əvvəlki</a>
+                            <div class="d-inline-block">
+                                <a href="#" class="active">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#">4</a>
+                            </div>
+                            <a href="#" class="next">Növbəti</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="py-5 bg-image overlay-primary fixed overlay"
+            th:style="'background-image: url(' + @{/images/hero_1.jpg} + ');'">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h2 class="text-white">İş Axtarırsınız?</h2>
+                        <p class="mb-0 text-white lead">Minlərlə iş elanı arasından sizə uyğun olanı tapın və
+                            karyeranızı inkişaf etdirin.</p>
+                    </div>
+                    <div class="col-md-3 ml-auto">
+                        <a href="#" class="btn btn-warning btn-block btn-lg">Qeydiyyat</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="site-section py-4">
+            <div class="container">
+
+                <div class="row align-items-center">
+                    <div class="col-12 text-center mt-4 mb-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-7">
+                                <h2 class="section-title mb-2">Əməkdaşlıq Etdiyimiz Şirkətlər</h2>
+                                <p class="lead">Platformamızda minlərlə tanınmış şirkət öz iş elanlarını yerləşdirir və
+                                    ən yaxşı namizədləri tapır.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-6 col-lg-3 col-md-6 text-center">
+                        <img th:src="@{/images/logo_mailchimp.svg}" alt="Image" class="img-fluid logo-1">
+                    </div>
+                    <div class="col-6 col-lg-3 col-md-6 text-center">
+                        <img th:src="@{/images/logo_paypal.svg}" alt="Image" class="img-fluid logo-2">
+                    </div>
+                    <div class="col-6 col-lg-3 col-md-6 text-center">
+                        <img th:src="@{/images/logo_stripe.svg}" alt="Image" class="img-fluid logo-3">
+                    </div>
+                    <div class="col-6 col-lg-3 col-md-6 text-center">
+                        <img th:src="@{/images/logo_visa.svg}" alt="Image" class="img-fluid logo-4">
+                    </div>
+
+                    <div class="col-6 col-lg-3 col-md-6 text-center">
+                        <img th:src="@{/images/logo_apple.svg}" alt="Image" class="img-fluid logo-5">
+                    </div>
+                    <div class="col-6 col-lg-3 col-md-6 text-center">
+                        <img th:src="@{/images/logo_tinder.svg}" alt="Image" class="img-fluid logo-6">
+                    </div>
+                    <div class="col-6 col-lg-3 col-md-6 text-center">
+                        <img th:src="@{/images/logo_sony.svg}" alt="Image" class="img-fluid logo-7">
+                    </div>
+                    <div class="col-6 col-lg-3 col-md-6 text-center">
+                        <img th:src="@{/images/logo_airbnb.svg}" alt="Image" class="img-fluid logo-8">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="bg-light pt-5 testimony-full">
+
+            <div class="owl-carousel single-carousel">
+
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 align-self-center text-center text-lg-left">
+                            <blockquote>
+                                <p>&ldquo;Bu platforma sayəsində xəyalımdakı işi tapdım. İstifadəsi çox asandır və
+                                    minlərlə iş elanı mövcuddur. Hər kəsə tövsiyə edirəm!&rdquo;</p>
+                                <p><cite> &mdash; Corey Woods, @Dribbble</cite></p>
+                            </blockquote>
+                        </div>
+                        <div class="col-lg-6 align-self-end text-center text-lg-right">
+                            <img th:src="@{/images/person_transparent_2.png}" alt="Image" class="img-fluid mb-0">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 align-self-center text-center text-lg-left">
+                            <blockquote>
+                                <p>&ldquo;Əla bir platforma! Şirkətimiz üçün ən yaxşı namizədləri buradan tapdıq.
+                                    Peşəkar və istifadəsi rahat interfeys.&rdquo;</p>
+                                <p><cite> &mdash; Chris Peters, @Google</cite></p>
+                            </blockquote>
+                        </div>
+                        <div class="col-lg-6 align-self-end text-center text-lg-right">
+                            <img th:src="@{/images/person_transparent.png}" alt="Image" class="img-fluid mb-0">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="pt-5 bg-image overlay-primary fixed overlay"
+            th:style="'background-image: url(' + @{/images/hero_1.jpg} + ');'">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 align-self-center text-center text-md-left mb-5 mb-md-0">
+                        <h2 class="text-white">Mobil Tətbiqlərimizi Yükləyin</h2>
+                        <p class="mb-5 lead text-white">İş axtarışını daha rahat etmək üçün mobil tətbiqlərimizi
+                            yükləyin və istənilən yerdən iş elanlarına baxa bilin.</p>
+                        <p class="mb-0">
+                            <a href="#" class="btn btn-dark btn-md px-4 border-width-2"><span
+                                    class="icon-apple mr-3"></span>App Store</a>
+                            <a href="#" class="btn btn-dark btn-md px-4 border-width-2"><span
+                                    class="icon-android mr-3"></span>Play Store</a>
+                        </p>
+                    </div>
+                    <div class="col-md-6 ml-auto align-self-end">
+                        <img th:src="@{/images/apps.png}" alt="Free Website Template by Free-Template.co"
+                            class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+
+</html>

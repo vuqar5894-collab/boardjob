@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>JobBoard &mdash; FAQ</title>
+</head>
+
+<body>
+
+    <div layout:fragment="content">
+        <!-- HOME -->
+        <section class="section-hero overlay inner-page bg-image"
+            th:style="'background-image: url(' + @{/images/hero_1.jpg} + ');'" id="home-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1 class="text-white font-weight-bold">Təz-təz Verilən Suallar</h1>
+                        <div class="custom-breadcrumbs">
+                            <a href="#">Ana Səhifə</a> <span class="mx-2 slash">/</span>
+                            <span class="text-white"><strong>FAQ</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="site-section" id="accordion">
+            <div class="container">
+
+                <div class="row accordion justify-content-center block__76208">
+                    <div class="col-lg-6">
+                        <img th:src="@{/images/sq_img_8.jpg}" alt="Image" class="img-fluid rounded">
+                    </div>
+                    <div class="col-lg-5 ml-auto">
+                        <div class="accordion-item">
+                            <h3 class="mb-0 heading">
+                                <a class="btn-block h4" data-toggle="collapse" href="#collapseFive" role="button"
+                                    aria-expanded="true" aria-controls="collapseFive">Şirkətinizin adı nədir?<span
+                                        class="icon"></span></a>
+                            </h3>
+                            <div id="collapseFive" class="collapse show" aria-labelledby="headingOne"
+                                data-parent="#accordion">
+                                <div class="body-text">
+                                    <p>Biz JobBoard platformasıyıq - Azərbaycanda iş axtarışı və işə qəbul prosesini
+                                        asanlaşdıran müasir platforma. Namizədlər və işəgötürənləri bir araya gətiririk.
+                                    </p>
+                                </div>
+                            </div>
+                        </div> <!-- .accordion-item -->
+
+                        <div class="accordion-item">
+                            <h3 class="mb-0 heading">
+                                <a class="btn-block h4" data-toggle="collapse" href="#collapseSix" role="button"
+                                    aria-expanded="false" aria-controls="collapseSix">3 aylıq xidmət ne qədərdir?<span
+                                        class="icon"></span></a>
+                            </h3>
+                            <div id="collapseSix" class="collapse" aria-labelledby="headingOne"
+                                data-parent="#accordion">
+                                <div class="body-text">
+                                    <p>Platformamız tam pulsuz istifadə olunur. Namizədlər üçün iş axtarış və müraciət,
+                                        işəgötürənlər üçün iş elan etmə tam pulsuzdır. Heç bir ödəniş tələb olunmur.</p>
+                                </div>
+                            </div>
+                        </div> <!-- .accordion-item -->
+
+                        <div class="accordion-item">
+                            <h3 class="mb-0 heading">
+                                <a class="btn-block h4" data-toggle="collapse" href="#collapseSeven" role="button"
+                                    aria-expanded="false" aria-controls="collapseSeven">Qeydiyyatdan keçməliyəmmi? <span
+                                        class="icon"></span></a>
+                            </h3>
+                            <div id="collapseSeven" class="collapse" aria-labelledby="headingOne"
+                                data-parent="#accordion">
+                                <div class="body-text">
+                                    <p>Bəli, platformadan tam istifadə etmək üçün qeydiyyatdan keçməlisiniz. Qeydiyyat
+                                        prosesi çox sadədir - yalnız ad, email və şifrə daxil edin. Qeydiyyatdan sonra
+                                        işlərə müraciət edə və ya iş elan edə bilərsiniz.</p>
+                                </div>
+                            </div>
+                        </div> <!-- .accordion-item -->
+
+                        <div class="accordion-item">
+                            <h3 class="mb-0 heading">
+                                <a class="btn-block h4" data-toggle="collapse" href="#collapseEight" role="button"
+                                    aria-expanded="false" aria-controls="collapseEight">Dəstək üçün kimə müraciət
+                                    etməliyəm?<span class="icon"></span></a>
+                            </h3>
+                            <div id="collapseEight" class="collapse" aria-labelledby="headingOne"
+                                data-parent="#accordion">
+                                <div class="body-text">
+                                    <p>Hər hansı sual və ya problem yarandıqda bizə Əlaqə səhifəsindən yaza bilərsiniz.
+                                        Dəstək komandası 24 saat ərzində cavab verəcək. Email: support@jobboard.az</p>
+                                </div>
+                            </div>
+                        </div> <!-- .accordion-item -->
+
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <section class="site-section bg-light">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-12 text-center" data-aos="fade">
+                        <h2 class="section-title mb-3">Xəşnəd Namizədlər Deyir</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="block__87154 bg-white rounded">
+                            <blockquote>
+                                <p>&ldquo;Bu platforma sayəsində xəyalımdakı işi tapdım. İstifadəsi çox asandır və
+                                    dəstək komandası çox köməkçidir. Hər kəsə tövsiyə edirəm!&rdquo;</p>
+                            </blockquote>
+                            <div class="block__91147 d-flex align-items-center">
+                                <figure class="mr-4"><img th:src="@{/images/person_1.jpg}" alt="Image"
+                                        class="img-fluid"></figure>
+                                <div>
+                                    <h3>Elisabeth Smith</h3>
+                                    <span class="position">Kreativ Direktor</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="block__87154 bg-white rounded">
+                            <blockquote>
+                                <p>&ldquo;Əla bir platforma! Şirkətimiz üçün ən yaxşı namizədləri buradan tapdıq.
+                                    Peşəkar və istifadəsi rahat interfeys.&rdquo;</p>
+                            </blockquote>
+                            <div class="block__91147 d-flex align-items-center">
+                                <figure class="mr-4"><img th:src="@{/images/person_2.jpg}" alt="Image"
+                                        class="img-fluid"></figure>
+                                <div>
+                                    <h3>Chris Peter</h3>
+                                    <span class="position">Veb Dizayner</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

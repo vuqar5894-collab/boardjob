@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>İş Lövhəsi &mdash; Əlaqə Mesajları</title>
+</head>
+
+<body>
+
+    <div layout:fragment="content">
+        <section class="section-hero overlay inner-page bg-image"
+            th:style="'background-image: url(' + @{/images/hero_1.jpg} + ');'" id="home-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1 class="text-white font-weight-bold">Əlaqə Mesajları</h1>
+                        <div class="custom-breadcrumbs">
+                            <a th:href="@{/}">Ana Səhifə</a> <span class="mx-2 slash">/</span>
+                            <a th:href="@{/admin}">Admin</a> <span class="mx-2 slash">/</span>
+                            <span class="text-white"><strong>Mesajlar</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="site-section">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <a th:href="@{/admin}" class="btn btn-outline-primary">
+                            <i class="icon-arrow-left mr-2"></i>Panelə Qayıt
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card shadow">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Bütün Əlaqə Mesajları</h6>
+                            </div>
+                            <div class="card-body">
+                                <div th:if="${messages.empty}" class="alert alert-info">
+                                    Hələ heç bir əlaqə mesajı alınmayıb.
+                                </div>
+                                <div th:unless="${messages.empty}" class="table-responsive">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Ad</th>
+                                                <th>Email</th>
+                                                <th>Mövzu</th>
+                                                <th>Mesaj</th>
+                                                <th>Tarix</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="msg : ${messages}">
+                                                <td th:text="${msg.firstName + ' ' + msg.lastName}">Name</td>
+                                                <td th:text="${msg.email}">Email</td>
+                                                <td th:text="${msg.subject}">Subject</td>
+                                                <td>
+                                                    <span th:text="${#strings.abbreviate(msg.message, 50)}">Message
+                                                        preview...</span>
+                                                    <button type="button" class="btn btn-sm btn-link"
+                                                        data-toggle="modal"
+                                                        th:data-target="'#messageModal' + ${msg.id}">
+                                                        Tamını Gör
+                                                    </button>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" th:id="'messageModal' + ${msg.id}"
+                                                        tabindex="-1" role="dialog" aria-hidden="true">
+                                                        <div class="modal-dialog modal-lg" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title">Mesaj göndərən: <span
+                                                                            th:text="${msg.firstName + ' ' + msg.lastName}">Name</span>
+                                                                    </h5>
+                                                                    <button type="button" class="close"
+                                                                        data-dismiss="modal" aria-label="Bağla">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <p><strong>Email:</strong> <span
+                                                                            th:text="${msg.email}">email</span></p>
+                                                                    <p><strong>Mövzu:</strong> <span
+                                                                            th:text="${msg.subject}">subject</span></p>
+                                                                    <p><strong>Mesaj:</strong></p>
+                                                                    <p th:text="${msg.message}">Message content...</p>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                        data-dismiss="modal">Bağla</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td th:text="${#temporals.format(msg.createdAt, 'dd MMM yyyy HH:mm')}">
+                                                    Date</td>
+                                                <td>
+                                                    <span th:if="${msg.read}" class="badge badge-success">Oxunub</span>
+                                                    <span th:unless="${msg.read}"
+                                                        class="badge badge-warning">Oxunmayıb</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

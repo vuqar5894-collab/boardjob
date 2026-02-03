@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>İş Lövhəsi &mdash; Mənim Müraciətlərim</title>
+</head>
+
+<body>
+
+    <div layout:fragment="content">
+        <section class="section-hero overlay inner-page bg-image"
+            th:style="'background-image: url(' + @{/images/hero_1.jpg} + ');'" id="home-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1 class="text-white font-weight-bold">Mənim Müraciətlərim</h1>
+                        <div class="custom-breadcrumbs">
+                            <a href="#">Ana Səhifə</a> <span class="mx-2 slash">/</span>
+                            <span class="text-white"><strong>Mənim Müraciətlərim</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="site-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-md-12">
+                        <div th:if="${applications.empty}" class="alert alert-info">
+                            Siz hələ heç bir işə müraciət etməmisiniz.
+                        </div>
+                        <div th:unless="${applications.empty}" class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>İş Adı</th>
+                                        <th>İşəgötürən</th>
+                                        <th>Kateqoriya</th>
+                                        <th>İş Növü</th>
+                                        <th>Yer</th>
+                                        <th>Müraciət Tarixi</th>
+                                        <th>Əməliyyat</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="app : ${applications}">
+                                        <td><a th:href="@{/jobs/{id}(id=${app.job.id})}" th:text="${app.job.title}">Job
+                                                Title</a></td>
+                                        <td th:text="${app.job.employer != null ? app.job.employer.name : 'Unknown'}">
+                                            Employer</td>
+                                        <td th:text="${app.job.category != null ? app.job.category.name : 'N/A'}">
+                                            Category</td>
+                                        <td th:text="${app.job.jobType}">Job Type</td>
+                                        <td th:text="${app.job.location}">Location</td>
+                                        <td th:text="${#temporals.format(app.appliedAt, 'yyyy-MM-dd HH:mm')}">Date</td>
+                                        <td>
+                                            <a th:href="@{/jobs/{id}(id=${app.job.id})}"
+                                                class="btn btn-sm btn-primary">Bax</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

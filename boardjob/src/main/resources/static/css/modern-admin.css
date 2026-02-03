@@ -1,0 +1,1480 @@
+/* ============================================
+   MODERN ADMIN PANEL CSS
+   Pure CSS modernization - No HTML changes
+   Designed for professional SaaS dashboards
+   ============================================ */
+
+/* Import Google Font - Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ============================================
+   GLOBAL ADMIN OVERRIDES
+   ============================================ */
+
+/* Force Inter font on ALL elements */
+* {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif !important;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    background-color: #F9FAFB !important;
+    color: #111827 !important;
+    line-height: 1.6 !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* ============================================
+   MODERN TYPOGRAPHY SYSTEM
+   ============================================ */
+
+/* Headings - Professional hierarchy */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 700 !important;
+    color: #111827 !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1rem !important;
+}
+
+h1 {
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.03em !important;
+}
+
+h2 {
+    font-size: 2.25rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.025em !important;
+}
+
+h3 {
+    font-size: 1.875rem !important;
+    font-weight: 700 !important;
+}
+
+h4 {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+}
+
+h5 {
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+}
+
+h6 {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* Paragraphs */
+p {
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+    color: #4B5563 !important;
+    margin-bottom: 1rem !important;
+}
+
+p.lead {
+    font-size: 1.25rem !important;
+    line-height: 1.6 !important;
+    font-weight: 400 !important;
+    color: #374151 !important;
+}
+
+/* Small text */
+small,
+.small {
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+}
+
+/* Links */
+a {
+    color: #4F46E5 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    font-weight: 500 !important;
+}
+
+a:hover {
+    color: #4338CA !important;
+    text-decoration: none !important;
+}
+
+/* Footer links - light color for dark background */
+.site-footer a,
+footer a {
+    color: #D1D5DB !important;
+    font-weight: 400 !important;
+}
+
+.site-footer a:hover,
+footer a:hover {
+    color: #4F46E5 !important;
+}
+
+/* Footer headings */
+.site-footer h3,
+.site-footer h4,
+.site-footer h5,
+footer h3,
+footer h4,
+footer h5 {
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+/* Text utilities */
+.text-muted {
+    color: #6B7280 !important;
+}
+
+.text-primary {
+    color: #4F46E5 !important;
+}
+
+.text-secondary {
+    color: #6B7280 !important;
+}
+
+.text-success {
+    color: #10B981 !important;
+}
+
+.text-danger {
+    color: #EF4444 !important;
+}
+
+.text-warning {
+    color: #F59E0B !important;
+}
+
+.text-info {
+    color: #3B82F6 !important;
+}
+
+/* Font weights */
+.font-weight-light {
+    font-weight: 300 !important;
+}
+
+.font-weight-normal {
+    font-weight: 400 !important;
+}
+
+.font-weight-medium {
+    font-weight: 500 !important;
+}
+
+.font-weight-semibold {
+    font-weight: 600 !important;
+}
+
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+
+.font-weight-extrabold {
+    font-weight: 800 !important;
+}
+
+/* Lists */
+ul,
+ol {
+    line-height: 1.7 !important;
+    color: #4B5563 !important;
+}
+
+li {
+    margin-bottom: 0.5rem !important;
+}
+
+/* Labels */
+label {
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    color: #374151 !important;
+    margin-bottom: 0.5rem !important;
+    display: block !important;
+}
+
+/* Blockquotes */
+blockquote {
+    font-size: 1.125rem !important;
+    font-style: italic !important;
+    color: #4B5563 !important;
+    border-left: 4px solid #4F46E5 !important;
+    padding-left: 1.5rem !important;
+    margin: 1.5rem 0 !important;
+}
+
+/* Code */
+code {
+    font-family: 'Monaco', 'Courier New', monospace !important;
+    font-size: 0.875rem !important;
+    background: #F3F4F6 !important;
+    padding: 0.2rem 0.4rem !important;
+    border-radius: 4px !important;
+    color: #DC2626 !important;
+}
+
+pre {
+    font-family: 'Monaco', 'Courier New', monospace !important;
+    font-size: 0.875rem !important;
+    background: #1F2937 !important;
+    color: #F9FAFB !important;
+    padding: 1rem !important;
+    border-radius: 8px !important;
+    overflow-x: auto !important;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.25rem !important;
+    }
+
+    h2 {
+        font-size: 1.875rem !important;
+    }
+
+    h3 {
+        font-size: 1.5rem !important;
+    }
+
+    h4 {
+        font-size: 1.25rem !important;
+    }
+
+    body {
+        font-size: 15px !important;
+    }
+
+    p.lead {
+        font-size: 1.125rem !important;
+    }
+}
+
+/* ============================================
+   ADMIN HERO SECTION
+   ============================================ */
+
+.section-hero.overlay.inner-page {
+    background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%) !important;
+    padding: 3rem 0 !important;
+    min-height: auto !important;
+}
+
+.section-hero h1 {
+    font-weight: 700 !important;
+    font-size: 2.5rem !important;
+    letter-spacing: -0.02em !important;
+    color: white !important;
+}
+
+.custom-breadcrumbs a,
+.custom-breadcrumbs span {
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* ============================================
+   STATISTICS CARDS - MODERN DASHBOARD
+   ============================================ */
+
+.card {
+    border: none !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.3s ease !important;
+    background: white !important;
+    overflow: hidden !important;
+    margin-bottom: 2rem !important;
+}
+
+.card:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12) !important;
+    transform: translateY(-4px) !important;
+}
+
+.card-header {
+    background: transparent !important;
+    border-bottom: 1px solid #F3F4F6 !important;
+    padding: 1.5rem 2rem !important;
+}
+
+.card-header h6 {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: #374151 !important;
+    margin: 0 !important;
+    letter-spacing: -0.01em !important;
+}
+
+.card-body {
+    padding: 2rem !important;
+}
+
+/* Statistics Numbers - Large and Prominent */
+.card-body h2,
+.card-body h3 {
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+    color: #4F46E5 !important;
+    margin-bottom: 0.5rem !important;
+    letter-spacing: -0.03em !important;
+}
+
+.card-body p {
+    font-size: 1rem !important;
+    color: #6B7280 !important;
+    font-weight: 500 !important;
+    margin: 0 !important;
+}
+
+.card-body p.text-muted {
+    color: #6B7280 !important;
+}
+
+/* ============================================
+   BUTTONS - MODERN SOFT STYLE
+   ============================================ */
+
+.btn {
+    border-radius: 12px !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    transition: all 0.2s ease !important;
+    border: none !important;
+    letter-spacing: -0.01em !important;
+}
+
+.btn-primary {
+    background: #4F46E5 !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25) !important;
+}
+
+.btn-primary:hover {
+    background: #4338CA !important;
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4) !important;
+    transform: translateY(-2px) scale(1.02) !important;
+}
+
+.btn-outline-primary {
+    background: white !important;
+    color: #4F46E5 !important;
+    border: 2px solid #E0E7FF !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+.btn-outline-primary:hover {
+    background: #EEF2FF !important;
+    border-color: #C7D2FE !important;
+    color: #4338CA !important;
+    transform: translateY(-2px) !important;
+}
+
+.btn-success {
+    background: #10B981 !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25) !important;
+}
+
+.btn-success:hover {
+    background: #059669 !important;
+    transform: translateY(-2px) !important;
+}
+
+.btn-danger {
+    background: #EF4444 !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25) !important;
+}
+
+.btn-danger:hover {
+    background: #DC2626 !important;
+    transform: translateY(-2px) !important;
+}
+
+.btn-info {
+    background: #3B82F6 !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25) !important;
+}
+
+.btn-info:hover {
+    background: #2563EB !important;
+    transform: translateY(-2px) !important;
+}
+
+.btn-secondary {
+    background: #F3F4F6 !important;
+    color: #374151 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+.btn-secondary:hover {
+    background: #E5E7EB !important;
+    color: #1F2937 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Small buttons */
+.btn-sm {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+    border-radius: 8px !important;
+}
+
+/* ============================================
+   TABLES - CLEAN MODERN DESIGN
+   ============================================ */
+
+.table-responsive {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+}
+
+.table {
+    margin-bottom: 0 !important;
+}
+
+.table thead th {
+    background: #F9FAFB !important;
+    color: #374151 !important;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    padding: 1.25rem 1.5rem !important;
+    border-bottom: 2px solid #E5E7EB !important;
+    border-top: none !important;
+}
+
+.table tbody td {
+    padding: 1.25rem 1.5rem !important;
+    vertical-align: middle !important;
+    color: #4B5563 !important;
+    font-size: 0.95rem !important;
+    border-bottom: 1px solid #F3F4F6 !important;
+}
+
+.table tbody tr {
+    transition: all 0.2s ease !important;
+    background: white !important;
+}
+
+.table tbody tr:hover {
+    background: #F9FAFB !important;
+}
+
+.table-bordered {
+    border: none !important;
+}
+
+.table-bordered td,
+.table-bordered th {
+    border: none !important;
+}
+
+/* ============================================
+   BADGES - MODERN PILLS
+   ============================================ */
+
+.badge {
+    padding: 0.5rem 1rem !important;
+    border-radius: 20px !important;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.02em !important;
+}
+
+.badge-primary {
+    background: #EEF2FF !important;
+    color: #4F46E5 !important;
+}
+
+.badge-success {
+    background: #D1FAE5 !important;
+    color: #059669 !important;
+}
+
+.badge-info {
+    background: #DBEAFE !important;
+    color: #2563EB !important;
+}
+
+.badge-danger {
+    background: #FEE2E2 !important;
+    color: #DC2626 !important;
+}
+
+.badge-warning {
+    background: #FEF3C7 !important;
+    color: #D97706 !important;
+}
+
+.badge-secondary {
+    background: #F3F4F6 !important;
+    color: #6B7280 !important;
+}
+
+/* ============================================
+   ALERTS - MODERN NOTIFICATIONS
+   ============================================ */
+
+.alert {
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 1.25rem 1.5rem !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    border-left: 4px solid !important;
+}
+
+.alert-success {
+    background: #D1FAE5 !important;
+    color: #065F46 !important;
+    border-left-color: #10B981 !important;
+}
+
+.alert-danger {
+    background: #FEE2E2 !important;
+    color: #991B1B !important;
+    border-left-color: #EF4444 !important;
+}
+
+.alert-dismissible .close {
+    padding: 0.75rem 1rem !important;
+    opacity: 0.6 !important;
+}
+
+.alert-dismissible .close:hover {
+    opacity: 1 !important;
+}
+
+/* ============================================
+   SPACING & LAYOUT
+   ============================================ */
+
+.site-section {
+    padding: 3rem 0 !important;
+}
+
+.row.mb-4,
+.row.mb-3 {
+    margin-bottom: 2rem !important;
+}
+
+.card.shadow {
+    margin-bottom: 2rem !important;
+}
+
+/* Improve spacing between cards in grid */
+.col-md-6.col-lg-3 {
+    padding: 0 1rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* ============================================
+   BUTTON GROUPS
+   ============================================ */
+
+.btn-group .btn {
+    margin: 0 !important;
+}
+
+.btn-group .btn:first-child {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.btn-group .btn:last-child {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+.btn-group .btn:not(:first-child):not(:last-child) {
+    border-radius: 0 !important;
+}
+
+/* ============================================
+   DROPDOWN MENUS
+   ============================================ */
+
+.dropdown-menu {
+    border: none !important;
+    border-radius: 12px !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12) !important;
+    padding: 0.5rem !important;
+}
+
+.dropdown-item {
+    border-radius: 8px !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 0.95rem !important;
+    transition: all 0.2s ease !important;
+}
+
+.dropdown-item:hover {
+    background: #F3F4F6 !important;
+    color: #1F2937 !important;
+}
+
+/* ============================================
+   FORMS IN ADMIN
+   ============================================ */
+
+.form-control {
+    border: 2px solid #E5E7EB !important;
+    border-radius: 10px !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 0.95rem !important;
+    transition: all 0.2s ease !important;
+}
+
+.form-control:focus {
+    border-color: #4F46E5 !important;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1) !important;
+    outline: none !important;
+}
+
+/* Select dropdown - fix text cutoff */
+select.form-control {
+    height: auto !important;
+    min-height: 48px !important;
+    padding: 0.85rem 2.5rem 0.85rem 1rem !important;
+    line-height: 1.5 !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234F46E5' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 1rem center !important;
+    background-size: 12px !important;
+}
+
+select.form-control option {
+    padding: 0.75rem 1rem !important;
+    line-height: 1.7 !important;
+}
+
+/* ============================================
+   ICONS
+   ============================================ */
+
+[class^="icon-"],
+[class*=" icon-"] {
+    transition: all 0.2s ease !important;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+
+    .card-body h2,
+    .card-body h3 {
+        font-size: 2.25rem !important;
+    }
+
+    .section-hero h1 {
+        font-size: 2rem !important;
+    }
+
+    .col-md-6.col-lg-3 {
+        padding: 0 0.75rem !important;
+    }
+}
+
+/* ============================================
+   SMOOTH SCROLLING
+   ============================================ */
+
+html {
+    scroll-behavior: smooth !important;
+}
+
+/* ============================================
+   FOCUS STATES - ACCESSIBILITY
+   ============================================ */
+
+.btn:focus,
+.form-control:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15) !important;
+}
+
+/* ============================================
+   CONTAINER
+   ============================================ */
+
+.container {
+    max-width: 1200px !important;
+}
+
+/* ============================================
+   CUSTOM ENHANCEMENTS
+   ============================================ */
+
+/* Make the back button more prominent */
+.btn-outline-primary .icon-arrow-left {
+    margin-right: 0.5rem !important;
+}
+
+/* Improve table action buttons spacing */
+.btn-group {
+    gap: 0.25rem !important;
+    display: inline-flex !important;
+}
+
+/* Add subtle animation to cards on page load */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeInUp 0.5s ease-out !important;
+}
+
+/* Stagger animation for multiple cards */
+.col-md-6.col-lg-3:nth-child(1) .card {
+    animation-delay: 0.1s !important;
+}
+
+.col-md-6.col-lg-3:nth-child(2) .card {
+    animation-delay: 0.2s !important;
+}
+
+.col-md-6.col-lg-3:nth-child(3) .card {
+    animation-delay: 0.3s !important;
+}
+
+.col-md-6.col-lg-3:nth-child(4) .card {
+    animation-delay: 0.4s !important;
+}
+
+/* ============================================
+   ADMIN SPECIFIC SECTIONS
+   ============================================ */
+
+/* Admin page titles */
+.site-section h2 {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    color: #111827 !important;
+    margin-bottom: 2rem !important;
+}
+
+/* Admin content wrapper */
+.site-section {
+    background: #F9FAFB !important;
+}
+
+/* Improve visual hierarchy */
+.card-header+.card-body {
+    padding-top: 1.5rem !important;
+}
+
+/* Better spacing for admin lists */
+.list-group-item {
+    border: none !important;
+    padding: 1rem 1.5rem !important;
+    background: white !important;
+    margin-bottom: 0.5rem !important;
+    border-radius: 8px !important;
+}
+
+.list-group-item:hover {
+    background: #F9FAFB !important;
+}
+
+/* ============================================
+   NAVBAR FIX - PREVENT OVERLAP
+   ============================================ */
+
+/* Navbar spacing */
+.site-navbar {
+    background: white !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Navigation container - limit width */
+.site-navigation {
+    max-width: 55% !important;
+    margin-right: auto !important;
+}
+
+/* Menu items - reduce spacing */
+.site-menu {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+    flex-wrap: nowrap !important;
+}
+
+.site-menu>li>a {
+    font-size: 0.9rem !important;
+    padding: 0.5rem 0.75rem !important;
+    white-space: nowrap !important;
+    color: white !important;
+    font-weight: 500 !important;
+}
+
+.site-menu>li>a:hover,
+.site-menu>li.active>a {
+    color: #4F46E5 !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+}
+
+/* ============================================
+   HEADER BUTTONS - UNIFIED COMPONENT
+   ============================================ */
+.right-cta-menu {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+}
+
+.right-cta-menu .ml-auto {
+    display: flex !important;
+    gap: 12px !important;
+    /* Proper spacing between buttons */
+    align-items: center !important;
+}
+
+/* SHARED BUTTON STYLES - Component Base */
+.right-cta-menu .btn {
+    height: 44px !important;
+    /* Consistent Height */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 20px !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    border-radius: 12px !important;
+    white-space: nowrap !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+    /* Unified Depth */
+    border: 2px solid transparent !important;
+    /* Prevent layout shift */
+}
+
+/* Hover Effect for ALL Buttons */
+.right-cta-menu .btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 1) Post Job Button (White/Light) */
+.btn-outline-white,
+.right-cta-menu .btn-outline-white {
+    background: white !important;
+    color: #4F46E5 !important;
+    border: 2px solid white !important;
+}
+
+.right-cta-menu .btn-outline-white:hover {
+    background: #4F46E5 !important;
+    color: white !important;
+    border-color: #4F46E5 !important;
+    box-shadow: 0 12px 24px rgba(79, 70, 229, 0.3) !important;
+}
+
+/* 2) Login Button (Primary Indigo) */
+.right-cta-menu .btn-primary {
+    background: #4F46E5 !important;
+    color: white !important;
+    border-color: #4F46E5 !important;
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25) !important;
+}
+
+.right-cta-menu .btn-primary:hover {
+    background: #4338CA !important;
+    box-shadow: 0 12px 24px rgba(79, 70, 229, 0.4) !important;
+}
+
+/* 3) Register Button (Success Green) */
+.right-cta-menu .btn-success {
+    background: #10B981 !important;
+    color: white !important;
+    border-color: #10B981 !important;
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.25) !important;
+}
+
+.right-cta-menu .btn-success:hover {
+    background: #059669 !important;
+    box-shadow: 0 12px 24px rgba(16, 185, 129, 0.4) !important;
+}
+
+/* Icon refinement */
+.right-cta-menu .icon {
+    font-size: 1.1rem !important;
+    margin-right: 8px !important;
+    font-weight: normal !important;
+}
+
+
+/* ============================================
+   HEADER & LOGO POLISH - Premium Look
+   ============================================ */
+
+/* 1) NAVBAR LAYOUT - Professional SaaS Look */
+.site-navbar {
+    height: 90px !important;
+    /* Fixed height for consistency */
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: rgba(255, 255, 255, 0.92) !important;
+    /* Visible background */
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08) !important;
+    position: absolute !important;
+    /* Overlay hero */
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+}
+
+.site-navbar .container-fluid {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+}
+
+.site-navbar .row {
+    width: 100% !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    /* Prevent wrapping */
+}
+
+/* Override Bootstrap cols to allow proper centering */
+.site-logo.col-6,
+.right-cta-menu.col-6 {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    max-width: none !important;
+    padding: 0 !important;
+}
+
+/* Center the Nav */
+.site-navigation {
+    flex: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    /* Override mx-auto */
+}
+
+.site-menu {
+    display: flex !important;
+    align-items: center !important;
+    gap: 28px !important;
+    /* Refined micro-gap */
+    /* Proper gap between links */
+    margin-bottom: 0 !important;
+}
+
+/* LINK READABILITY - Dark & Sharp */
+.site-menu>li>a {
+    color: #111827 !important;
+    /* Dark text */
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    /* Bolder links for contrast */
+    transition: color 0.2s ease !important;
+    opacity: 0.8 !important;
+}
+
+.site-menu>li>a:hover {
+    color: #4F46E5 !important;
+    opacity: 1 !important;
+}
+
+/* 2) LOGO AREA - Horizontal & Balanced */
+.site-logo .logo-container {
+    display: flex !important;
+    flex-direction: row !important;
+    /* Horizontal alignment */
+    align-items: center !important;
+    text-decoration: none !important;
+    gap: 8px !important;
+    /* Pixel-perfect gap */
+    /* Space between Badge and Text */
+}
+
+/* JB Badge */
+.logo-badge {
+    width: 52px !important;
+    height: 52px !important;
+    background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%) !important;
+    border-radius: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.4rem !important;
+    font-weight: 800 !important;
+    color: white !important;
+    letter-spacing: -0.03em !important;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25) !important;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.logo-container:hover .logo-badge {
+    transform: scale(1.05) rotate(-3deg) !important;
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4) !important;
+}
+
+/* JOBBOARD Text */
+.logo-text {
+    font-size: 1.4rem !important;
+    font-weight: 900 !important;
+    /* Maximum weight for branding */
+    color: #111827 !important;
+    letter-spacing: -0.02em !important;
+    text-transform: uppercase !important;
+    font-family: 'Inter', sans-serif !important;
+    transition: color 0.3s ease !important;
+}
+
+.logo-container:hover .logo-text {
+    color: #4F46E5 !important;
+}
+
+/* 3) RIGHT ACTIONS */
+.right-cta-menu {
+    text-align: right !important;
+}
+
+/* 4) Responsive Adjustments */
+@media (max-width: 1200px) {
+    .site-navbar {
+        height: auto !important;
+        padding: 15px 20px !important;
+    }
+
+    .site-navbar .row {
+        flex-wrap: wrap !important;
+    }
+
+    .site-logo.col-6 {
+        flex: 0 0 50% !important;
+        width: 50% !important;
+    }
+
+    .right-cta-menu.col-6 {
+        flex: 0 0 50% !important;
+        width: 50% !important;
+    }
+}
+
+/* Responsive - hide some menu items on smaller screens */
+@media (max-width: 1200px) {
+    .site-navigation {
+        max-width: 50% !important;
+    }
+
+    .site-menu>li>a {
+        font-size: 0.85rem !important;
+        padding: 0.5rem 0.6rem !important;
+    }
+
+    .right-cta-menu .btn {
+        font-size: 0.8rem !important;
+        padding: 0.45rem 0.85rem !important;
+    }
+}
+
+/* ============================================
+   PROFESSIONAL UI/UX POLISH
+   CSS-only visual improvements
+   ============================================ */
+
+/* 1) HERO READABILITY - Dark overlay for better text contrast */
+.home-section.section-hero.overlay.bg-image {
+    position: relative !important;
+}
+
+.home-section.section-hero.overlay.bg-image::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: linear-gradient(rgba(17, 24, 39, 0.55), rgba(17, 24, 39, 0.55)) !important;
+    z-index: 1 !important;
+    backdrop-filter: blur(2px) !important;
+    /* Subtle depth */
+}
+
+.home-section.section-hero .container {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* 2) NAVBAR VISIBILITY - Backdrop blur + semi-transparent */
+.site-navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.3s ease !important;
+}
+
+.site-navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* 3) SEARCH BAR IMPROVEMENTS - Better height, radius, font */
+.search-jobs-form .form-control,
+.search-jobs-form .selectpicker,
+.search-jobs-form .bootstrap-select .btn {
+    min-height: 56px !important;
+    height: 56px !important;
+    border-radius: 12px !important;
+    font-size: 1rem !important;
+    padding: 0.75rem 1.25rem !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+    /* Soft Shadow */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.search-jobs-form .form-control:focus,
+.search-jobs-form .bootstrap-select .btn:focus {
+    border-color: #4F46E5 !important;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1) !important;
+    background: white !important;
+}
+
+.search-jobs-form .btn-search {
+    min-height: 56px !important;
+    height: 56px !important;
+    border-radius: 12px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 16px rgba(79, 70, 229, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.search-jobs-form .btn-search:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 24px rgba(79, 70, 229, 0.4) !important;
+}
+
+/* 4) POPULAR KEYWORDS SECTION - Visual separation */
+.popular-keywords {
+    background: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    margin-top: 2rem !important;
+    box-shadow: none !important;
+    transform: none !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+.popular-keywords h3 {
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    color: #374151 !important;
+    margin-bottom: 1rem !important;
+}
+
+.popular-keywords .keywords li {
+    display: inline-block !important;
+    margin-right: 1rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.popular-keywords .keywords a {
+    display: inline-block !important;
+    padding: 0.5rem 1.25rem !important;
+    background: white !important;
+    color: #4F46E5 !important;
+    border-radius: 20px !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    border: 2px solid #E0E7FF !important;
+    transition: all 0.2s ease !important;
+}
+
+.popular-keywords .keywords a:hover {
+    background: #4F46E5 !important;
+    color: white !important;
+    border-color: #4F46E5 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25) !important;
+}
+
+/* 5) MICRO-POLISH - Smooth transitions and spacing */
+.home-section h1 {
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1.5rem !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.home-section p {
+    font-size: 1.25rem !important;
+    line-height: 1.6 !important;
+    color: rgba(255, 255, 255, 0.95) !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Scroll button polish */
+.scroll-button {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.scroll-button:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    transform: translateY(4px) !important;
+}
+
+/* Form spacing improvements */
+.search-jobs-form .row.mb-5 {
+    margin-bottom: 2rem !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .home-section h1 {
+        font-size: 2rem !important;
+    }
+
+    .home-section p {
+        font-size: 1rem !important;
+    }
+
+    .popular-keywords {
+        padding: 40px 20px !important;
+        margin-top: 30px !important;
+    }
+
+    .search-jobs-form .form-control,
+    .search-jobs-form .btn-search {
+        min-height: 48px !important;
+        height: 48px !important;
+    }
+}
+
+/* ============================================
+   HEADER FLEXBOX LAYOUT & BUTTONS
+   ============================================ */
+
+/* 1. Fix Header Layout (Flexbox) */
+.site-navbar .row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+}
+
+.site-navbar .site-logo {
+    position: relative !important;
+    left: auto !important;
+    width: auto !important;
+    flex: 0 0 auto !important;
+    max-width: none !important;
+}
+
+.site-navbar .site-navigation {
+    position: relative !important;
+    left: auto !important;
+    transform: none !important;
+    flex: 1 1 auto !important;
+    text-align: center !important;
+    width: auto !important;
+}
+
+.site-navbar .right-cta-menu {
+    position: relative !important;
+    right: auto !important;
+    width: auto !important;
+    flex: 0 0 auto !important;
+    max-width: none !important;
+    margin-left: auto !important;
+}
+
+/* 2. Unify Styles & Fix Icon Alignment */
+.right-cta-menu .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    height: 44px !important;
+    padding: 0 1.5rem !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+    transition: all 0.25s ease !important;
+}
+
+/* Target Icons specifically */
+.right-cta-menu .btn span[class^="icon-"],
+.right-cta-menu .btn i {
+    font-size: 18px !important;
+    flex-shrink: 0 !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+}
+
+/* Color Variations */
+.right-cta-menu .btn-primary {
+    background: #4F46E5 !important;
+    color: white !important;
+    border: none !important;
+}
+
+.right-cta-menu .btn-primary:hover {
+    background: #4338CA !important;
+    transform: translateY(-2px) !important;
+}
+
+.right-cta-menu .btn-success {
+    background: #10B981 !important;
+    color: white !important;
+    border: none !important;
+}
+
+.right-cta-menu .btn-success:hover {
+    background: #059669 !important;
+    transform: translateY(-2px) !important;
+}
+
+.right-cta-menu .btn-outline-white {
+    background: white !important;
+    color: #374151 !important;
+    border: 1px solid #E5E7EB !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+.right-cta-menu .btn-outline-white:hover {
+    background: #F9FAFB !important;
+    border-color: #D1D5DB !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ============================================
+   FIX: RESTORE HOME PAGE SEARCH FORM
+   Prevent admin styles from breaking public search
+   ============================================ */
+
+/* 1. Reset Form Controls in Hero Section */
+.home-section .search-jobs-form .form-control {
+    background: #fff !important;
+    border: none !important;
+    border-radius: 4px !important;
+    padding: 0.5rem 1rem !important;
+    height: calc(2em + 1rem + 2px) !important;
+    box-shadow: none !important;
+    color: #343a40 !important;
+}
+
+/* 2. Fix Bootstrap Select Button */
+.home-section .search-jobs-form .bootstrap-select .btn {
+    background: #fff !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 10px 20px !important;
+    border-radius: 4px !important;
+    font-weight: 400 !important;
+    height: auto !important;
+}
+
+/* 3. Fix Dropdown Menu Visibility & Colors */
+/* Ensure the dropdown menu container is visible when open */
+.home-section .search-jobs-form .dropdown-menu {
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: 0 5px 50px -10px rgba(0, 0, 0, 0.4) !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    z-index: 1000 !important;
+    /* Fix overlap with keywords */
+}
+
+/* Force visibility when 'show' class is present (Bootstrap 4) */
+.home-section .search-jobs-form .dropdown-menu.show {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    /* Reset any transforms */
+}
+
+/* 4. Fix Inner List Items */
+.home-section .search-jobs-form .dropdown-menu li {
+    margin-bottom: 0 !important;
+    /* Remove global list margin */
+}
+
+/* Fix link colors inside dropdown to be dark, not purple */
+.home-section .search-jobs-form .dropdown-menu a {
+    color: #343a40 !important;
+    padding: 10px 20px !important;
+    display: block !important;
+    background: transparent !important;
+    font-weight: 400 !important;
+    text-decoration: none !important;
+}
+
+.home-section .search-jobs-form .dropdown-menu a:hover {
+    background-color: #f8f9fa !important;
+    color: #000 !important;
+}
+
+/* 5. Fix Search Button */
+.home-section .search-jobs-form .btn-search {
+    height: calc(2em + 1rem + 2px) !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>JobBoard &mdash; My Profile</title>
+</head>
+
+<body>
+
+    <div layout:fragment="content">
+        <section class="section-hero overlay inner-page bg-image"
+            th:style="'background-image: url(' + @{/images/hero_1.jpg} + ');'" id="home-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1 class="text-white font-weight-bold">My Profile</h1>
+                        <div class="custom-breadcrumbs">
+                            <a href="#">Home</a> <span class="mx-2 slash">/</span>
+                            <span class="text-white"><strong>Profile</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="site-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <!-- Profile Card -->
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3 bg-primary">
+                                <h6 class="m-0 font-weight-bold text-white">
+                                    <i class="icon-person mr-2"></i>Profile Information
+                                </h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-md-4">
+                                        <strong>Name:</strong>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <span th:text="${user.name}">John Doe</span>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row mb-3">
+                                    <div class="col-md-4">
+                                        <strong>Email:</strong>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <span th:text="${user.email}">john@example.com</span>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row mb-3">
+                                    <div class="col-md-4">
+                                        <strong>Role:</strong>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <span class="badge badge-success" th:text="${user.role}">CANDIDATE</span>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row mb-3">
+                                    <div class="col-md-4">
+                                        <strong>Applications Made:</strong>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <span class="badge badge-primary badge-pill"
+                                            th:text="${applicationCount}">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions Card -->
+                        <div class="card shadow">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">
+                                    <i class="icon-briefcase mr-2"></i>Quick Actions
+                                </h6>
+                            </div>
+                            <div class="card-body">
+                                <a th:href="@{/candidate/applications}" class="btn btn-primary btn-block mb-2">
+                                    <i class="icon-file-text mr-2"></i>View My Applications
+                                </a>
+                                <a th:href="@{/jobs}" class="btn btn-outline-primary btn-block">
+                                    <i class="icon-search mr-2"></i>Browse Jobs
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<header th:fragment="header">
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close mt-3">
+                <span class="icon-close2 js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+
+    <!-- NAVBAR -->
+    <header class="site-navbar mt-3">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="site-logo col-6">
+                    <a th:href="@{/index}" class="logo-container">
+                        <div class="logo-badge">JB</div>
+                        <div class="logo-text">JOBBOARD</div>
+                    </a>
+                </div>
+
+                <nav class="mx-auto site-navigation">
+                    <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
+                        <li><a th:href="@{/index}" class="nav-link">Ana Səhifə</a></li>
+                        <li><a th:href="@{/about}">Haqqımızda</a></li>
+                        <li class="has-children">
+                            <a th:href="@{/job-listings}">İş Elanları</a>
+                            <ul class="dropdown">
+                                <li><a th:href="@{/job-single}">İş Detalları</a></li>
+                                <li><a th:href="@{/jobs/post}">İş Elan Et</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-children">
+                            <a href="#">Səhifələr</a>
+                            <ul class="dropdown">
+                                <li><a th:href="@{/services}">Xidmətlər</a></li>
+                                <li><a th:href="@{/service-single}">Xidmət Detalları</a></li>
+                                <li><a th:href="@{/portfolio}">Portfel</a></li>
+                                <li><a th:href="@{/portfolio-single}">Portfel Detalları</a></li>
+                                <li><a th:href="@{/testimonials}">Rəylər</a></li>
+                                <li><a th:href="@{/faq}">FAQ</a></li>
+                                <li><a th:href="@{/gallery}">Qalereya</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a th:href="@{/blog}">Bloq</a></li>
+                        <li><a th:href="@{/contact}">Əlaqə</a></li>
+
+                        <!-- Mobile Menu Items -->
+                        <li class="d-lg-none"><a th:href="@{/jobs/post}"><span class="mr-2">+</span> İş Elan Et</a></li>
+
+                        <!-- Mobile: Login and Register for Anonymous Users -->
+                        <li class="d-lg-none" sec:authorize="isAnonymous()"><a th:href="@{/login}">Daxil Ol</a></li>
+                        <li class="d-lg-none" sec:authorize="isAnonymous()"><a th:href="@{/register}">Qeydiyyat</a></li>
+
+                        <!-- Mobile: Profile Menu for Authenticated Users -->
+                        <li class="d-lg-none has-children" sec:authorize="isAuthenticated()">
+                            <a href="#">Profile</a>
+                            <ul class="dropdown">
+                                <!-- Candidate Links -->
+                                <li sec:authorize="hasRole('CANDIDATE')"><a th:href="@{/candidate/profile}">Mənim
+                                        Profilim</a></li>
+                                <li sec:authorize="hasRole('CANDIDATE')"><a th:href="@{/candidate/applications}">Mənim
+                                        Müraciətlərim</a></li>
+
+                                <!-- Employer Links -->
+                                <li sec:authorize="hasRole('EMPLOYER')"><a th:href="@{/employer/profile}">Mənim
+                                        Profilim</a>
+                                </li>
+                                <li sec:authorize="hasRole('EMPLOYER')"><a th:href="@{/employer/jobs}">Mənim İşlərim</a>
+                                </li>
+                                <li sec:authorize="hasRole('EMPLOYER')"><a th:href="@{/jobs/post}">İş Elan Et</a></li>
+
+                                <!-- Admin Links -->
+                                <li sec:authorize="hasRole('ADMIN')"><a th:href="@{/admin}">Admin Panel</a></li>
+
+                                <!-- Logout -->
+                                <li>
+                                    <form th:action="@{/logout}" method="post" style="display:inline;">
+                                        <button type="submit" class="btn btn-sm btn-danger">Çıxış</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+                    <div class="ml-auto">
+                        <a th:href="@{/jobs/post}"
+                            class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span
+                                class="mr-2 icon-add"></span>İş Elan Et</a>
+
+                        <!-- Login and Register for Anonymous Users -->
+                        <a sec:authorize="isAnonymous()" th:href="@{/login}"
+                            class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span
+                                class="mr-2 icon-lock_outline"></span>Daxil Ol</a>
+                        <a sec:authorize="isAnonymous()" th:href="@{/register}"
+                            class="btn btn-success border-width-2 d-none d-lg-inline-block"><span
+                                class="mr-2 icon-person"></span>Qeydiyyat</a>
+
+                        <!-- Profile Dropdown for Authenticated Users -->
+                        <div sec:authorize="isAuthenticated()" class="dropdown d-none d-lg-inline-block"
+                            style="display:inline-block;">
+                            <button class="btn btn-primary border-width-2 dropdown-toggle" type="button"
+                                id="profileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 icon-person"></span>
+                                <span sec:authentication="name">User</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
+                                <!-- Candidate Links -->
+                                <a sec:authorize="hasRole('CANDIDATE')" class="dropdown-item"
+                                    th:href="@{/candidate/profile}">
+                                    <i class="icon-person mr-2"></i>Mənim Profilim
+                                </a>
+                                <a sec:authorize="hasRole('CANDIDATE')" class="dropdown-item"
+                                    th:href="@{/candidate/applications}">
+                                    <i class="icon-file-text mr-2"></i>Mənim Müraciətlərim
+                                </a>
+
+                                <!-- Employer Links -->
+                                <a sec:authorize="hasRole('EMPLOYER')" class="dropdown-item"
+                                    th:href="@{/employer/profile}">
+                                    <i class="icon-person mr-2"></i>Mənim Profilim
+                                </a>
+                                <a sec:authorize="hasRole('EMPLOYER')" class="dropdown-item"
+                                    th:href="@{/employer/jobs}">
+                                    <i class="icon-briefcase mr-2"></i>Mənim İşlərim
+                                </a>
+                                <a sec:authorize="hasRole('EMPLOYER')" class="dropdown-item" th:href="@{/jobs/post}">
+                                    <i class="icon-add mr-2"></i>İş Elan Et
+                                </a>
+
+                                <!-- Admin Links -->
+                                <a sec:authorize="hasRole('ADMIN')" class="dropdown-item" th:href="@{/admin}">
+                                    <i class="icon-settings mr-2"></i>Admin Panel
+                                </a>
+
+                                <div class="dropdown-divider"></div>
+
+                                <!-- Logout Form -->
+                                <form th:action="@{/logout}" method="post" style="margin:0;">
+                                    <button type="submit" class="dropdown-item text-danger">
+                                        <i class="icon-lock_outline mr-2"></i>Çıxış
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+</header>
+
+</html>
